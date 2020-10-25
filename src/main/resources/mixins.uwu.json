@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "mixins.uwu.refmap.json",
+  "package": "me.uwu.streamermode.mixin.impl",
+  "mixins": [
+    "MixinFontRenderer"
+  ]
+}
