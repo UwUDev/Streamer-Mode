@@ -2,6 +2,7 @@ package me.uwu.streamermode;
 
 import me.uwu.streamermode.commands.CommandBlur;
 import me.uwu.streamermode.commands.CommandNick;
+import me.uwu.streamermode.commands.CommandRank;
 import me.uwu.streamermode.commands.CommandResetNick;
 import me.uwu.streamermode.utils.RenameUtils;
 import net.minecraft.client.Minecraft;
@@ -16,6 +17,7 @@ public class Main {
 
     public static Main instance = new Main();
     public RenameUtils renameUtils = new RenameUtils();
+    public boolean rank = true;
 
     public static boolean started = false;
     public static final String MOD_ID = "StreamerMode";
@@ -30,7 +32,7 @@ public class Main {
         ClientCommandHandler.instance.registerCommand(new CommandNick());
         ClientCommandHandler.instance.registerCommand(new CommandBlur());
         ClientCommandHandler.instance.registerCommand(new CommandResetNick());
-
+        ClientCommandHandler.instance.registerCommand(new CommandRank());
     }
 
     @Mod.EventHandler
