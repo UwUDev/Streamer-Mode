@@ -6,16 +6,16 @@ import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
 
-public class CommandResetNick extends CommandBase {
+public class CommandNickReset extends CommandBase {
 
     @Override
     public String getCommandName() {
-        return "resetnick";
+        return "nickreset";
     }
 
     @Override
     public String getCommandUsage(ICommandSender sender) {
-        return "/resetnick";
+        return "/nickreset";
     }
 
     @Override
