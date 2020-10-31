@@ -20,34 +20,37 @@ public class MixinFontRenderer {
         if (string == null)
             return null;
 
-        String owo = string;
-        if (Main.started){
-            if (Minecraft.getMinecraft() != null && Minecraft.getMinecraft().getSession() != null) {
-                owo = string.replace(Minecraft.getMinecraft().getSession().getUsername(), Main.instance.renameUtils.nick);
-               // owo = owo.replace("Minecraft", "UwU");
+            String owo = string;
 
-                if(owo.contains("[") && owo.contains("]") && owo.contains(Main.instance.renameUtils.nick) && Main.instance.rank) {
-                    int a = 0;
-                    int b = 0;
+       if(Main.instance.stream) {
+            if (Main.started) {
+                if (Minecraft.getMinecraft() != null && Minecraft.getMinecraft().getSession() != null) {
+                    owo = string.replace(Minecraft.getMinecraft().getSession().getUsername(), Main.instance.renameUtils.nick);
+                    // owo = owo.replace("Minecraft", "UwU");
+
+                    if (owo.contains("[") && owo.contains("]") && owo.contains(Main.instance.renameUtils.nick) && Main.instance.rank) {
+                        int a = 0;
+                        int b = 0;
 
 
-                    String[] bruh = owo.split(" ");
-                    for (String huh : bruh){
-                        if(huh.contains("[") && huh.contains("]"))
-                            b = a;
-                        a++;
+                        String[] bruh = owo.split(" ");
+                        for (String huh : bruh) {
+                            if (huh.contains("[") && huh.contains("]"))
+                                b = a;
+                            a++;
+                        }
+                        String s = bruh[b];
+                        bruh[b] = s.substring(0, s.indexOf("[") - 2) + s.substring(s.indexOf("]"));
+                        bruh[b].trim();
+                        bruh[b] = bruh[b].replace("]", Main.instance.renameUtils.rank);
+
+                        StringBuilder sb = new StringBuilder();
+
+                        for (String huh : bruh)
+                            sb.append(huh).append(" ");
+
+                        owo = sb.toString().substring(0, sb.toString().length() - 1);
                     }
-                    String s = bruh[b];
-                    bruh[b] = s.substring(0, s.indexOf("[") - 2) + s.substring(s.indexOf("]"));
-                    bruh[b].trim();
-                    bruh[b] = bruh[b].replace("]", Main.instance.renameUtils.rank);
-
-                    StringBuilder sb = new StringBuilder();
-
-                    for (String huh : bruh)
-                        sb.append(huh).append(" ");
-
-                    owo = sb.toString().substring(0, sb.toString().length() - 1);
                 }
             }
         }

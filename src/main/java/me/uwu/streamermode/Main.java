@@ -15,6 +15,7 @@ public class Main {
     public static Main instance = new Main();
     public RenameUtils renameUtils = new RenameUtils();
     public boolean rank = false;
+    public boolean stream = true;
 
     public static boolean started = false;
     public static final String MOD_ID = "StreamerMode";
@@ -26,6 +27,8 @@ public class Main {
 
     @Mod.EventHandler
     public static void init(FMLInitializationEvent e) {
+        ClientCommandHandler.instance.registerCommand(new CommandStream());
+
         ClientCommandHandler.instance.registerCommand(new CommandNick());
         ClientCommandHandler.instance.registerCommand(new CommandBlur());
         ClientCommandHandler.instance.registerCommand(new CommandNickReset());
