@@ -21,6 +21,7 @@ public class CommandBlur extends CommandBase {
 
     @Override
     public void processCommand(ICommandSender sender, String[] args) throws CommandException {
+        Main.instance.stream = true;
         Main.instance.renameUtils.nick = EnumChatFormatting.RED.toString() + EnumChatFormatting.OBFUSCATED.toString() + Minecraft.getMinecraft().getSession().getUsername();
     }
 

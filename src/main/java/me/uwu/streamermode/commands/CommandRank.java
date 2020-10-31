@@ -34,6 +34,9 @@ public class CommandRank extends CommandBase {
                         EnumChatFormatting.RED + rank + " is not valid rank"));
                 return;
             }
+
+            Main.instance.rank = true;
+            Main.instance.stream = true;
             sender.addChatMessage(new ChatComponentText(EnumChatFormatting.GREEN + "Ranked to " + colorFix(rank)));
             Main.instance.renameUtils.rank = colorFix(rank);
 

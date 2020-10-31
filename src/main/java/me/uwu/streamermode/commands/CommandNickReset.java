@@ -21,6 +21,7 @@ public class CommandNickReset extends CommandBase {
     @Override
     public void processCommand(ICommandSender sender, String[] args) throws CommandException {
        Main.instance.renameUtils.nick = Minecraft.getMinecraft().getSession().getUsername();
+        Main.instance.stream = false;
     }
 
     @Override

@@ -34,6 +34,8 @@ public class CommandNick extends CommandBase {
                         EnumChatFormatting.RED + nick + " is not valid Name"));
                 return;
             }
+
+            Main.instance.stream = true;
             sender.addChatMessage(new ChatComponentText(EnumChatFormatting.GREEN + "Nicked to " + colorFix(nick)));
             Main.instance.renameUtils.nick = colorFix(nick);
 

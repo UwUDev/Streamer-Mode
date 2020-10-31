@@ -21,6 +21,7 @@ public class CommandRankEnable extends CommandBase {
     @Override
     public void processCommand(ICommandSender sender, String[] args) throws CommandException {
         Main.instance.rank = true;
+        Main.instance.stream = true;
     }
 
     @Override
