@@ -16,14 +16,14 @@ public class CommandNick extends CommandBase {
 
     @Override
     public String getCommandUsage(ICommandSender sender) {
-        return "/nick <name> (use \"&\" for §ac§bo§3l§do§5r§4s§c)";
+        return colorFix("/nick <name> (use \"&\" for &ac&bo&3l&do&5r&4s&c)");
     }
 
     @Override
     public void processCommand(ICommandSender sender, String[] args) throws CommandException {
 
         if (args.length < 1) {
-            sender.addChatMessage(new ChatComponentText(EnumChatFormatting.RED + "/nick <name> (use \"&\" for §ac§bo§3l§do§5r§4s§c)"));
+            sender.addChatMessage(new ChatComponentText(EnumChatFormatting.RED + colorFix("/nick <name> (use \"&\" for &ac&bo&3l&do&5r&4s&c)")));
             return;
         }
 

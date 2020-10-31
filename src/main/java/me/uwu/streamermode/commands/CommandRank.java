@@ -16,14 +16,14 @@ public class CommandRank extends CommandBase {
 
     @Override
     public String getCommandUsage(ICommandSender sender) {
-        return "/rank <rank> (use \"&\" for §ac§bo§3l§do§5r§4s§c)";
+        return colorFix("/rank <rank> (use \"&\" for &ac&bo&3l&do&5r&4s&c)");
     }
 
     @Override
     public void processCommand(ICommandSender sender, String[] args) throws CommandException {
 
         if (args.length < 1) {
-            sender.addChatMessage(new ChatComponentText(EnumChatFormatting.RED + "/rank <rank> (use \"&\" for §ac§bo§3l§do§5r§4s§c)"));
+            sender.addChatMessage(new ChatComponentText(EnumChatFormatting.RED + colorFix("/rank <rank> (use \"&\" for &ac&bo&3l&do&5r&4s&c)")));
             return;
         }
 
